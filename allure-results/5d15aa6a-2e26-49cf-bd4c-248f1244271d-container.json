@@ -1,0 +1,1 @@
+{"uuid":"5d15aa6a-2e26-49cf-bd4c-248f1244271d","name":"spotifyDemoTest.BaseTest.setup","children":["8b3b93e3-691f-49fa-ac2e-fee646e8b1c9"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1706539249375,"stop":1706539255121}],"afters":[],"start":1706539249375,"stop":1706539255121}

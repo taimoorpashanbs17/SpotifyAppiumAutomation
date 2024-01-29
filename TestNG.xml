@@ -1,0 +1,12 @@
+<?xml version = "1.0"encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "Spotify Demo Suite">
+
+
+    <test name = "Spotify Test">
+        <classes>
+            <class name = "spotifyDemoTest.SpotifyRegistrationLoginTest"/>
+            <class name = "spotifyDemoTest.SpotifyArtistsFavouritesTest"/>
+        </classes>
+    </test>
+</suite>

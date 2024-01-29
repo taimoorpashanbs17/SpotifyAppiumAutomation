@@ -1,0 +1,1 @@
+[{"uid":"4ecf22438a5b37ae","name":"verifyUserRegistration","time":{"start":1706536700069,"stop":1706536831373,"duration":131304},"status":"passed","severity":"critical"},{"uid":"8476d32629e4cd94","name":"Login user with valid and Authorize Email Credentials.","time":{"start":1706536837301,"stop":1706536859823,"duration":22522},"status":"passed","severity":"critical"}]
