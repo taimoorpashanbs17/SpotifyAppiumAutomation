@@ -34,4 +34,13 @@ public class BasicDataStructureHelper {
     public static Integer getIndexOfKeyFromList(List<String> listOfElements, String keyName){
         return listOfElements.indexOf(keyName) + 1;
     }
+
+    public static List<String> gettingListOfArtists(List<String> listProvided){
+        int sizeOfList = listProvided.size();
+        int lastIndexOfList = sizeOfList -1;
+        listProvided.remove(lastIndexOfList);
+        int indexTillDataRemoved = listProvided.indexOf("Artists") + 1;
+        listProvided.subList(0, indexTillDataRemoved).clear();
+        return listProvided;
+    }
 }

@@ -4,6 +4,9 @@ import co.spotify.SpotifyTestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import org.testng.Assert;
+
+import java.util.HashSet;
 import java.util.List;
 
 import static co.spotify.helpers.LogHelper.error;
@@ -46,5 +49,20 @@ public class AssertUtils extends SpotifyTestBase {
         } else {
             error(expectedText + " is wrong Text as "+actualText+" is Actual Text");
         }
+    }
+
+    public static void verifyElementIsDisplaying(By elementLocator, String elementName) {
+        Assert.assertTrue(getAndroidDriver().findElement(elementLocator).isDisplayed());
+        error(elementName+" is displaying");
+    }
+
+    public static boolean comparingTwoLists(List<String> firstList, List<String> secondList, String successMessage,
+                                            String warningMessage){
+        if (new HashSet<>(firstList).containsAll(secondList) && new HashSet<>(secondList).containsAll(firstList)) {
+            info(successMessage);
+        } else {
+            error(warningMessage);
+        }
+        return false;
     }
 }

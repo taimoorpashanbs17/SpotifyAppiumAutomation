@@ -2,7 +2,6 @@ package co.spotify.utilities;
 
 import co.spotify.SpotifyTestBase;
 import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.WebElement;
 
 public class GesturesUtils extends SpotifyTestBase {
     public static void androidScrollingTillTextFound(String textToFound){
@@ -10,4 +9,3 @@ public class GesturesUtils extends SpotifyTestBase {
                     ".scrollIntoView(new UiSelector().text(\"" + textToFound + "\"));"));
         }
     }
-

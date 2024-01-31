@@ -13,4 +13,5 @@ public class ArtistInformationConstants {
     public static final String FIRST_ARTIST = properties.getProperty("firstArtist");
     public static final String SECOND_ARTIST = properties.getProperty("secondArtist");
     public static final String THIRD_ARTIST = properties.getProperty("thirdArtist");
+    public static final String FOURTH_ARTIST = properties.getProperty("fourthArtist");
 }

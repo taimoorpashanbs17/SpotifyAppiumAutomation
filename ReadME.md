@@ -23,7 +23,8 @@ Follow these steps to set up and run the project:
 
 1. **Clone the repository or download**:  the project source code to your local machine.
 
-```sh
+``` sh
+git clone https://github.com/taimoorpashanbs17/SpotifyAppiumAutomation.git
 ```
 
 2. Open a terminal and navigate to the project directory.
@@ -58,7 +59,7 @@ The project is structured as follows:
 - `src/main/resources`: Contains any required resources, such as configuration files.
 - `allure-results`: This directory will be generated after running tests and will contain the raw data needed to generate the Allure report.
 
-## Test Configuration
+## Device Configuration
 
 You can customize the test configuration by modifying the `src/main/resources/config.properties` file.
 i.e. If You want to change device , you change value on `deviceUDID` value and work it accordingly.

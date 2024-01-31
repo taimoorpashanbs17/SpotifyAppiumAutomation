@@ -47,10 +47,10 @@ public class SpotifyRegistrationLoginTest extends BaseTest{
         createNewAccountScreen.selectGender(USER_GENDER);
         createNewAccountScreen.enterNameOnWhatsYourNameField(USER_FIRST_NAME +" "+USER_LAST_NAME);
         createNewAccountScreen.doNotAcceptNotifications();
-        pickThreeArtistsScreen.selectFirstArtist(FIRST_ARTIST);
-        pickThreeArtistsScreen.selectOtherArtist(SECOND_ARTIST);
-        pickThreeArtistsScreen.selectOtherArtist(THIRD_ARTIST);
-        pickThreeArtistsScreen.clickOnDoneButton();
+        chooseYourArtistsScreen.selectFirstArtist(FIRST_ARTIST);
+        chooseYourArtistsScreen.selectOtherArtist(SECOND_ARTIST);
+        chooseYourArtistsScreen.selectOtherArtist(THIRD_ARTIST);
+        chooseYourArtistsScreen.clickOnDoneButton();
         successFulScreen.verifySuccessOnBoardingMessage(GREAT_PICKS_TEXT, CREATED_PLAYLIST_TEXT);
         successFulScreen.clickOnStartListeningButton();
         homeScreen.clickOnProfileButton();
@@ -66,12 +66,13 @@ public class SpotifyRegistrationLoginTest extends BaseTest{
                     "and log User out.")
     @Severity(SeverityLevel.CRITICAL)
     @Story("User logins with his Information")
-    public static void verifyUserLoginAndItsInformation() {
+    public static void verifyUserLoginAndItsInformation() throws InterruptedException {
         landingScreen.clickOnLoginButton();
         loginScreen.enterEmailUser(LOGIN_USER_EMAIL);
         loginScreen.enterPassword(PASSWORD);
         loginScreen.clickOnLoginButton();
         loginScreen.navigatingToHomeScreen();
+        homeScreen.clickOnMayBeLaterLink();
         homeScreen.clickOnProfileButton();
         userSideMenuScreen.verifyUserName(USER_FIRST_NAME +" "+USER_LAST_NAME);
         userSideMenuScreen.clickOnSettingsAndPrivacyMenuButton();

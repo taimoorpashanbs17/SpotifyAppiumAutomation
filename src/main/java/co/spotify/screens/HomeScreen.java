@@ -19,6 +19,7 @@ import static co.spotify.helpers.BasicDataStructureHelper.checkArtistNameDisplay
 
 import static co.spotify.utilities.ElementActionUtils.getMobileElementText;
 import static co.spotify.utilities.ElementActionUtils.clickMobileElement;
+import static co.spotify.utilities.ElementActionUtils.switchingToNativeView;
 
 import static co.spotify.helpers.LogHelper.info;
 
@@ -53,7 +54,8 @@ public class HomeScreen {
     }
 
     @Step("Click on 'May be Later' Button")
-    public void clickOnMayBeLaterLink(){
+    public void clickOnMayBeLaterLink() throws InterruptedException {
+        switchingToNativeView();
         try{
             waitForElementToBePresentAndClickable(mayBeLaterButton);
             clickMobileElement(mayBeLaterButton, "'May be later' Button");
