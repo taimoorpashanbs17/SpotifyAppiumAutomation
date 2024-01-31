@@ -3,6 +3,7 @@ package co.spotify.screens;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Step;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.By;
 
@@ -12,8 +13,10 @@ import static co.spotify.utilities.WaitsUtils.waitForElementToBeInvisible;
 import static co.spotify.utilities.ElementActionUtils.sendTextToMobileElement;
 import static co.spotify.utilities.ElementActionUtils.clickMobileElement;
 
-public class PickThreeArtistsScreen extends SpotifyScreens{
-    public PickThreeArtistsScreen(AndroidDriver androidDriver){
+import static co.spotify.utilities.GesturesUtils.androidScrollingTillTextFound;
+
+public class ChooseYourArtistsScreen extends SpotifyScreens{
+    public ChooseYourArtistsScreen(AndroidDriver androidDriver){
         PageFactory.initElements(androidDriver, this);
     }
 
@@ -27,6 +30,17 @@ public class PickThreeArtistsScreen extends SpotifyScreens{
         waitForElementToBePresentAndClickable(elementField);
         clickMobileElement(elementField, fieldName);
     }
+
+    public void selectArtistFromText(String artistName){
+        waitForElementToBePresentAndClickable(doneButton);
+        androidScrollingTillTextFound(artistName);
+        String artistThumbNailXpath = "//android.widget.TextView[@text='"+artistName+"']";
+        By artistLocator = AppiumBy.xpath(artistThumbNailXpath);
+        waitForElementToBePresentAndClickable(artistLocator);
+        clickMobileElement(artistLocator, artistName+" as a Artist selected");
+    }
+
+
 
     @Step("Selecting First Artist")
     public void selectFirstArtist(String artistName){

@@ -8,7 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 public class ElementActionUtils extends SpotifyTestBase{
@@ -77,5 +79,17 @@ public class ElementActionUtils extends SpotifyTestBase{
             String textValue = getAndroidDriver().findElement(elementLocator).getText();
             info("Getting Text of "+elementName);
         return textValue;
+    }
+
+    public static void switchingToWebView() throws InterruptedException {
+        Thread.sleep(3000);
+        Set<String> contextNames = getAndroidDriver().getContextHandles();
+        getAndroidDriver().context((String) contextNames.toArray()[1]);
+    }
+
+    public static void switchingToNativeView() throws InterruptedException {
+        Thread.sleep(3000);
+        Set<String> contextNames = getAndroidDriver().getContextHandles();
+        getAndroidDriver().context((String) contextNames.toArray()[0]);
     }
 }
